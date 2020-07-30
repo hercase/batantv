@@ -1,0 +1,77 @@
+@import '../../assets/styles/_variables'
+
+a
+  color: white
+  text-decoration: none
+  
+footer 
+  color: white
+  background-color: $color-bg-primary
+
+  & .topbar
+    background-color: $color-primary
+    height: 3em
+    display: flex
+    justify-content: space-around
+    align-items: center
+    font-size: 1.5em
+
+    & h6
+      margin: 0
+      font-weight: 300
+
+.footer-columns
+  display: flex
+
+  & h6
+    font-size: 1em
+    text-transform: uppercase
+    margin: 1em 0 .5em 0
+    font-weight: 300
+
+  & hr
+    border-color: $color-primary
+    width: 100px
+    margin: 1em 0 .5em 0
+
+  & p
+    font-size: 0.9em
+    font-weight: 300
+    
+  &-block
+    flex: 1
+    padding: 0 2em
+
+  &-block:first-child
+    flex: 3
+    text-align: justify
+
+.footer-copyright
+  text-align: center
+  font-size: .8em
+  opacity: .5
+  font-weight: 300
+  margin-top: 2em
+
+@media screen and ( max-width: $med-width )
+  .footer-columns
+    display: flex
+    flex-wrap: wrap
+    text-align: center
+    justify-content: center
+
+    & hr
+      width: 100px
+      margin: 0 auto
+
+    &-block:first-child
+      flex: none !important
+      width: 90%
+      text-align: center !important
+
+  .topbar
+    font-size: 1.2em !important
+    padding: 1.5em 0
+    height: auto !important
+    flex-direction: column
+    
