@@ -13,7 +13,11 @@ import Channel from  'components/ChannelLayout'
 import Recommended from  'components/RecommendedVideos'
 import Footer from 'components/Footer'
 
+// Google Analytics
+import ReactGA from 'react-ga';
+
 function App() {
+  ReactGA.initialize('UA-121194497-5'); // Aqui pones tu identificador de cuenta de Google Analytics
   return (
     <HashRouter>
         <Header />
@@ -43,9 +47,8 @@ function App() {
 
 const Home = () => {
   const dispatch = useDispatch();
-
+  ReactGA.pageview('/');
   dispatch( clearChannel() )
-
   return (
     <section className="content">
         <div className="container">

@@ -10,6 +10,9 @@ import { setChannel } from 'redux/actions/channel-actions';
 import { playVideo } from 'redux/actions/player-actions';
 import { scroller } from 'react-scroll';
 
+// Google Analitycs
+import ReactGA from 'react-ga';
+
 const ChannelComponent = ({ id }) => {
   let [ isLoading, setIsLoading ] = useState(true);
   const dispatch = useDispatch()
@@ -27,6 +30,7 @@ const ChannelComponent = ({ id }) => {
     setTimeout(()=>{
       scroller.scrollTo("video-player", scrollType);
     },1000)
+    ReactGA.pageview(`/channel/${id}`)
   },[id]);
   
 
