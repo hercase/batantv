@@ -1,0 +1,56 @@
+@import '../../assets/styles/_variables.sass';
+
+.header
+  padding: 1em 2em
+  box-shadow: 2px 1px 5px 0px rgba(0,0,0,.2);
+  position: relative;  
+
+  &-container
+    max-width: $max-width  
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: auto;
+
+  & nav
+    background-color: white
+  
+.logo-container
+  display: flex
+  align-items: baseline;
+  height: 40px
+  padding: 15px
+
+
+  & .logo
+    height: 100%
+    margin-right: 10px
+
+  & .live
+    height: 35px
+
+.pulse 
+	-webkit-animation: pulse 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite both
+  animation: pulse 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite both
+
+
+@-webkit-keyframes pulse 
+  0%,
+  100% 
+    opacity: 1;
+  
+  50% 
+    opacity: 0;
+  
+
+@keyframes pulse 
+  0%,
+  50%,
+  100% 
+    opacity: 1;
+  
+  25%,
+  75% 
+    opacity: 0;
+  
+
