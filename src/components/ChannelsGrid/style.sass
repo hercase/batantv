@@ -1,0 +1,129 @@
+@import ../../assets/styles/_variables
+
+.horizontal
+
+.grid
+  padding: 1em
+  background-color: $color-bg-secondary
+  display: flex;
+
+  &-container
+    max-width: $max-width
+    margin: 0 auto
+    width: 100%
+    
+  &-title
+    color: $color-primary
+    font-size: 1.9rem
+    font-weight: 300
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &-controls
+    display: flex
+    
+  & button 
+    color: $color-primary
+    background: none
+    border: none
+    outline: none
+    cursor: pointer
+    margin: 0 .4rem
+
+  &-content
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: auto
+    width: 90%
+    flex-wrap: wrap
+    position: relative
+    padding-left: 30px;
+    padding-right: 30px;
+    
+
+    .cover
+      display: none
+      flex: 0 150px
+      overflow: hidden
+      position: relative
+      margin: .5em
+      height: auto !important
+      transition: .3s linear
+      border-radius: $radius
+      float: left
+      min-height: 1px
+      box-shadow: 0 4px 8px 0 rgba(65,67,126,0.2)
+      cursor: pointer
+
+      img 
+        display: block
+        width: 100%
+
+      .play_button
+        opacity: 0
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        z-index: 2
+        display: flex
+        justify-content: center
+        align-items: center
+
+      &:hover
+        box-shadow: 0 0 20px 0 $color-secondary;
+
+        &::before
+          display: block
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background-image: linear-gradient(180deg, $color-secondary 0%, $color-primary 100%)
+          opacity: .3
+          z-index: 1
+
+        &::after
+          content: ''
+          background-image: ''
+
+        & .play_button
+            opacity: 1
+        
+    .active
+      display: block
+
+    .large
+      flex: 0 200px 
+
+.skeleton
+  height: 100%
+  width: 100%
+  position: absolute
+  z-index: 2 
+
+@media ( max-width: $med-width )
+  .grid
+
+    &-title
+      font-size: 1.5rem
+    
+    &-channels
+      flex-wrap: wrap
+      
+    & .channel
+      width: 150px
+
+    & .cover
+      flex: 0 150px
+
+
+@media ( max-width: $min-width )
+  .grid
+
+    & .cover
+      flex: 0 100px
